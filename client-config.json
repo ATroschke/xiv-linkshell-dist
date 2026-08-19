@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "kill_switch": false,
+  "min_send_interval_seconds": 10,
+  "activity_interval_seconds": 5,
+  "slow_interval_seconds": 60,
+  "config_poll_interval_seconds": 900
+}
