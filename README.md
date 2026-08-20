@@ -1,4 +1,4 @@
-# chardb-dist
+# xiv-linkshell-dist
 
 Public distribution repo for **Linkshell Sync**, the Dalamud plugin behind
 [linkshell.fanfuse.app](https://linkshell.fanfuse.app). It carries two independent things: the
@@ -10,7 +10,7 @@ Dalamud custom plugin repository (`repo.json` + release zips) and the fleet remo
 In game: `/xlplugins` → Settings → Experimental → Custom Plugin Repositories → add
 
 ```
-https://raw.githubusercontent.com/ATroschke/chardb-dist/main/repo.json
+https://raw.githubusercontent.com/ATroschke/xiv-linkshell-dist/main/repo.json
 ```
 
 Save, then find **Linkshell Sync** in the plugin list. It is early access; nothing is collected or
@@ -21,20 +21,22 @@ uploaded until you switch upload on in its settings.
 | Path | Purpose |
 |---|---|
 | `repo.json` | Dalamud third-party repository index: a JSON array of one manifest |
-| `plugins/CharDatabase/latest.zip` | The packaged plugin, built `Release` by DalamudPackager |
-| `plugins/CharDatabase/icon.png` | 512×512 plugin icon, served as `IconUrl` |
+| `plugins/LinkshellSync/latest.zip` | The packaged plugin, built `Release` by DalamudPackager |
+| `plugins/LinkshellSync/icon.png` | 512×512 plugin icon, served as `IconUrl` |
 | `client-config.json` | Fleet tuning file, fetched by every install (see below) |
 
-`CharDatabase` is the plugin's `InternalName` and never changes — config paths and existing
-installs key off it. The display name is cosmetic and lives in `Name`.
+`LinkshellSync` is the plugin's `InternalName`: config paths and existing installs key off it, so
+it stays fixed from 0.2.0 on. The display name is cosmetic and lives in `Name`. (0.1.x shipped as
+`CharDatabase`; 0.2.0 renamed it, which Dalamud sees as a different plugin — those installs have
+to be removed and reinstalled, and their config does not carry over.)
 
 `RepoUrl` points here rather than at the source repo because the source repo is private, and a
 manifest link that 404s for every user is worse than one that points at the distribution.
 
 ### Releasing
 
-Build `Release`, then copy `plugin/CharDatabase/bin/x64/Release/CharDatabase/latest.zip` here and
-mirror the built `CharDatabase.json` values into `repo.json`, adding the download links, `IconUrl`
+Build `Release`, then copy `plugin/LinkshellSync/bin/x64/Release/LinkshellSync/latest.zip` here and
+mirror the built `LinkshellSync.json` values into `repo.json`, adding the download links, `IconUrl`
 and a fresh `LastUpdate` (unix seconds). `DalamudApiLevel` and `AssemblyVersion` come from the
 build; never hand-edit them.
 
