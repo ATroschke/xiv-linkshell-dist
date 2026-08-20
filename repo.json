@@ -1,0 +1,34 @@
+[
+  {
+    "Author": "Atroschke",
+    "Name": "Linkshell Sync",
+    "InternalName": "CharDatabase",
+    "AssemblyVersion": "0.1.0.0",
+    "TestingAssemblyVersion": "0.1.0.0",
+    "Punchline": "Your character, on your Linkshell profile — collections, jobs, achievements, synced while you play.",
+    "Description": "Linkshell Sync reads your own character's data from the game and keeps your profile on Linkshell up to date: jobs and levels, gear and gearsets, collections such as mounts, minions, orchestrion rolls, emotes and fish, achievements, titles, currencies and playtime. Nothing is collected and nothing is sent until you switch upload on in the settings, and only the character you are logged in as is ever read. To connect a character, mint a claim code on https://linkshell.fanfuse.app, then open /chardb in game, paste the code and claim the character. After that the plugin syncs quietly in the background while you play, at rates the operator can slow down remotely. This is early access, so expect rough edges.",
+    "Tags": [
+      "collection",
+      "profile",
+      "tracker",
+      "linkshell"
+    ],
+    "RepoUrl": "https://github.com/ATroschke/chardb-dist",
+    "ApplicableVersion": "any",
+    "DalamudApiLevel": 15,
+    "TestingDalamudApiLevel": 15,
+    "LoadRequiredState": 0,
+    "LoadSync": false,
+    "CanUnloadAsync": false,
+    "LoadPriority": 0,
+    "AcceptsFeedback": true,
+    "IsHide": false,
+    "IsTestingExclusive": false,
+    "IconUrl": "https://raw.githubusercontent.com/ATroschke/chardb-dist/main/plugins/CharDatabase/icon.png",
+    "DownloadLinkInstall": "https://raw.githubusercontent.com/ATroschke/chardb-dist/main/plugins/CharDatabase/latest.zip",
+    "DownloadLinkUpdate": "https://raw.githubusercontent.com/ATroschke/chardb-dist/main/plugins/CharDatabase/latest.zip",
+    "DownloadLinkTesting": "https://raw.githubusercontent.com/ATroschke/chardb-dist/main/plugins/CharDatabase/latest.zip",
+    "DownloadCount": 0,
+    "LastUpdate": 1787237171
+  }
+]

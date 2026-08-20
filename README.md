@@ -1,8 +1,47 @@
 # chardb-dist
 
-Public distribution repo for the char-database Dalamud plugin: the fleet remote-config origin
-(now) and the Dalamud custom plugin repository — `repo.json` + release zips — once the plugin
-ships. Source code lives in a separate private repo.
+Public distribution repo for **Linkshell Sync**, the Dalamud plugin behind
+[linkshell.fanfuse.app](https://linkshell.fanfuse.app). It carries two independent things: the
+Dalamud custom plugin repository (`repo.json` + release zips) and the fleet remote-config origin
+(`client-config.json`). Source code lives in a separate private repo.
+
+## Installing the plugin
+
+In game: `/xlplugins` → Settings → Experimental → Custom Plugin Repositories → add
+
+```
+https://raw.githubusercontent.com/ATroschke/chardb-dist/main/repo.json
+```
+
+Save, then find **Linkshell Sync** in the plugin list. It is early access; nothing is collected or
+uploaded until you switch upload on in its settings.
+
+## Layout
+
+| Path | Purpose |
+|---|---|
+| `repo.json` | Dalamud third-party repository index: a JSON array of one manifest |
+| `plugins/CharDatabase/latest.zip` | The packaged plugin, built `Release` by DalamudPackager |
+| `plugins/CharDatabase/icon.png` | 512×512 plugin icon, served as `IconUrl` |
+| `client-config.json` | Fleet tuning file, fetched by every install (see below) |
+
+`CharDatabase` is the plugin's `InternalName` and never changes — config paths and existing
+installs key off it. The display name is cosmetic and lives in `Name`.
+
+`RepoUrl` points here rather than at the source repo because the source repo is private, and a
+manifest link that 404s for every user is worse than one that points at the distribution.
+
+### Releasing
+
+Build `Release`, then copy `plugin/CharDatabase/bin/x64/Release/CharDatabase/latest.zip` here and
+mirror the built `CharDatabase.json` values into `repo.json`, adding the download links, `IconUrl`
+and a fresh `LastUpdate` (unix seconds). `DalamudApiLevel` and `AssemblyVersion` come from the
+build; never hand-edit them.
+
+The download links are stable paths, not per-version ones, so an update is a new zip at the same
+URL plus a bumped `AssemblyVersion` and `LastUpdate`.
+
+## Remote config
 
 `client-config.json` is fetched by every plugin install on a jittered interval. It is served
 from GitHub raw (a separate origin from the ingest API by design — the config that protects
