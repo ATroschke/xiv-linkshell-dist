@@ -3,10 +3,10 @@
     "Author": "Saik",
     "Name": "Linkshell Sync",
     "InternalName": "LinkshellSync",
-    "AssemblyVersion": "0.2.1.0",
-    "TestingAssemblyVersion": "0.2.1.0",
+    "AssemblyVersion": "0.2.2.0",
+    "TestingAssemblyVersion": "0.2.2.0",
     "Punchline": "Your character, on your Linkshell profile: collections, jobs, achievements, synced while you play.",
-    "Description": "Linkshell Sync reads your own character in game (jobs and levels, gear and gearsets, collections, achievements, titles, currencies and playtime) and keeps your profile on Linkshell up to date while you play. Nothing is read and nothing is sent until you switch upload on, and only the character you are logged in as is ever read. To connect a character, mint a claim code on https://linkshell.fanfuse.app, then run /lsync in game, paste the code and claim the character.",
+    "Description": "Linkshell Sync reads your own character in game (jobs and levels, gear and gearsets, collections, achievements, titles, currencies and playtime) and keeps your profile on Linkshell up to date while you play. Nothing is read and nothing is sent until you claim a character — claiming switches sync on, and the switch in settings turns it back off at any time. Only the character you are logged in as is ever read. To connect a character, mint a claim code on https://linkshell.fanfuse.app, then run /lss claim <code> in game.",
     "Tags": [
       "collection",
       "profile",
@@ -29,6 +29,6 @@
     "DownloadLinkUpdate": "https://raw.githubusercontent.com/ATroschke/xiv-linkshell-dist/main/plugins/LinkshellSync/latest.zip",
     "DownloadLinkTesting": "https://raw.githubusercontent.com/ATroschke/xiv-linkshell-dist/main/plugins/LinkshellSync/latest.zip",
     "DownloadCount": 0,
-    "LastUpdate": 1787321677
+    "LastUpdate": 1787322929
   }
 ]
